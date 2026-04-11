@@ -1,0 +1,26 @@
+class Person{
+  private:
+  int age;
+  string name;
+  public:
+  Person(int age , string name ){
+      this->age=age;
+      this->name =name;
+  }
+  // getter and setter 
+  int getAge(){
+      this->age;
+  }
+  string getName(){
+      this->name;
+  }
+  
+  void setAge(int age){
+      this->age=age;
+  }
+  void setName(string name){
+      this->name = name;
+  }
+  
+  
+};
