@@ -1,0 +1,54 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+
+class Student{
+    private:
+    string email;
+    string password;
+    public:
+    int age ;
+    int rollno;
+    string name;
+    Student(int rollno  , int age , string name , string email , string password){
+        this->name =name;
+        this->age=age;
+        this->rollno=rollno;
+        this->email=email;
+        this->password=password;
+
+    }
+    // copy constructor
+    Student(const Student &s ){
+        this->name=s.name;
+        this->age=s.age;
+        this->rollno=s.rollno;
+        
+        
+    }
+    void study(){
+        cout<<" student "<<this->name << " is studying"<<endl;
+    }
+    string getEmail(){
+        return this->email;
+    }
+    string getPassword (int code ){
+        if(code==123){
+            return this->password;
+        }
+        return nullptr;
+    }
+    
+};
+
+int main() {
+    Student s1(10, 16 ,"ram" , "admin@gmail.com" , "admin123");
+    // s1.email; can not access bcoz of private menber
+    //using getter you can access;
+    // cout<<s1.getEmail();
+    cout<<s1.getPassword(123);
+    
+
+    return 0;
+}
