@@ -1,0 +1,55 @@
+class Vehicles{
+    public:
+    string name;
+    string model;
+    int noOfTyres;
+    Vehicles(int t  , string model , string name){
+        this->noOfTyres=t;
+        this->model=model;
+        this->name=name;
+    }
+    void start_engine(){
+        cout<<"Engine has started"<<endl;
+    }
+    void stop_engine(){
+        cout<<"Engine has stoped"<<endl;
+    }
+};
+class Car:public Vehicles{
+    public:
+     int noOfDoors;
+     Car(int n , int t  , string model , string name):Vehicles(t , model , name){
+         
+         this->noOfDoors=n;
+     } 
+     void start_car(){
+         this->start_engine();
+     }
+};
+
+class Repair :public Car{
+    public:
+    bool isRepaired;
+    Repair(int n, Car c)
+        : Car(c.noOfDoors, c.noOfTyres, c.model, c.name) {
+        this->isRepaired = false;
+    }
+    void repaired(){
+        this->isRepaired=true;
+        cout<<this->name <<" has been repaired"<<endl;
+    }
+};
+
+
+
+
+int main() {
+  
+  Car c1(4 , 4 , "sedan" , "car1");
+  c1.start_car();
+  Repair r1(4 , c1);
+  r1.repaired();
+  
+
+    return 0;
+}
