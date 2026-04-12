@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+class Engine {
+public:
+    void start() {
+        cout << "Engine started" << endl;
+    }
+};
+
+class MusicSystem {
+public:
+    void playMusic() {
+        cout << "Playing music" << endl;
+    }
+};
+
+class Car : public Engine, public MusicSystem {
+public:
+    void drive() {
+        cout << "Car is driving" << endl;
+    }
+};
+
+int main() {
+    Car c;
+    c.start();       // from Engine
+    c.playMusic();   // from MusicSystem
+    c.drive();       // own method
+}
