@@ -1,0 +1,30 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+class Sum{
+    public:
+    int add (int x , int y){
+        return x+y;
+    }
+    float add(float x , float y){
+        return x+y;
+    }
+    double add(double x , double y){
+        double sum=x+y;
+        return sum;
+    }
+};
+
+
+
+
+
+int main() {
+  Sum s1;
+  cout<<s1.add(2.02000000000008, 4.000000700009);
+ 
+  
+
+    return 0;
+}
