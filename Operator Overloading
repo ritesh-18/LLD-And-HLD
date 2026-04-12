@@ -1,0 +1,47 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+class Sum{
+    public:
+    int add (int x , int y){
+        return x+y;
+    }
+    float add(float x , float y){
+        return x+y;
+    }
+    double add(double x , double y){
+        double sum=x+y;
+        return sum;
+    }
+    
+};
+
+class Complex{
+    public :
+    int real , imag;
+    Complex() : real(0), imag(0) {}
+    Complex(int r , int i):real(r) , imag(i){}
+    Complex operator +(const Complex & B){
+        Complex temp;
+        temp.real=this->real+B.real;
+        temp.imag=this->imag+B.imag;
+        cout<<"temp->real "<<temp.real<<" "<<"temp->imag "<<temp.imag<<"i"<<endl;
+        return temp;
+    }
+};
+
+
+
+
+
+int main() {
+ Complex * A=new Complex(2, 4);
+ Complex *B=new Complex(3,6);
+ Complex C=*A + *B;
+//  cout<<C.real;
+ 
+  
+
+    return 0;
+}
